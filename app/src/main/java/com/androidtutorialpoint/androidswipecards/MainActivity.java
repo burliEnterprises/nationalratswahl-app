@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,8 +24,11 @@ public class MainActivity extends AppCompatActivity {
     public static MyAppAdapter myAppAdapter;
     public static ViewHolder viewHolder;
     private ArrayList<Data> array;
+    private ArrayList<Integer>opinion;
     private SwipeFlingAdapterView flingContainer;
     private ImageView backToStart;
+    private TextView tv_questionNumber;
+    private ImageButton btn_right, btn_left;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
         backToStart = (ImageView) findViewById(R.id.backToStart);
+        tv_questionNumber = (TextView) findViewById(R.id.tv_questionNumber);
+        btn_right = (ImageButton) findViewById(R.id.btn_right);
+        btn_left = (ImageButton) findViewById(R.id.btn_left);
+
         backToStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,6 +48,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                flingContainer.getTopCardListener().selectRight();
+            }
+        });
+        btn_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                flingContainer.getTopCardListener().selectLeft();
+            }
+        });
+
+        opinion = new ArrayList<>();    // all answers from user, 0 no, 1 yes
         array = new ArrayList<>();
         array.add(new Data(1, "Soll statt der Mindestsicherung ein bedingungsloses Grundeinkommen eingeführt werden?"));
         array.add(new Data(2, "Soll die wöchentliche Arbeitszeit bei vollem Lohnausgleich auf 30 Stunden gekürzt werden?"));
@@ -79,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLeftCardExit(Object dataObject) {
                 array.remove(0);
+                opinion.add(0);
+                //int questionNumberNew = Integer.parseInt(tv_questionNumber.getText().toString()) + 1;
+                //tv_questionNumber.setText(String.valueOf(questionNumberNew));
                 myAppAdapter.notifyDataSetChanged();
                 //Do something on the left!
                 //You also have access to the original object.
@@ -87,19 +112,18 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onRightCardExit(Object dataObject) {
-
                 array.remove(0);
+                opinion.add(1);
                 myAppAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
-
+                // acitvity change to insert here
             }
 
             @Override
             public void onScroll(float scrollProgressPercent) {
-
                 View view = flingContainer.getSelectedView();
                 view.findViewById(R.id.background).setAlpha(0);
                 view.findViewById(R.id.item_swipe_right_indicator).setAlpha(scrollProgressPercent < 0 ? -scrollProgressPercent : 0);
