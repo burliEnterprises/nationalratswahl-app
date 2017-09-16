@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
-                startActivity(new Intent(MainActivity.this, StartActivity.class));
+                startActivity(new Intent(MainActivity.this, ResultsActivity.class));    // works, because i changed it in layout to 0
                 overridePendingTransition(R.animator.bottom_in, R.animator.top_out);
             }
 
@@ -212,5 +212,8 @@ public class MainActivity extends AppCompatActivity {
 
             return rowView;
         }
+    }
+    @Override
+    public void onBackPressed() {
     }
 }
