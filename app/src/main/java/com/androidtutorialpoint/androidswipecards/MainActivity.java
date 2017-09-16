@@ -16,6 +16,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Integer>opinion;
     private SwipeFlingAdapterView flingContainer;
     private ImageView backToStart;
-    private TextView tv_questionNumber;
     private ImageButton btn_right, btn_left;
 
     @Override
@@ -37,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
         backToStart = (ImageView) findViewById(R.id.backToStart);
-        tv_questionNumber = (TextView) findViewById(R.id.tv_questionNumber);
         btn_right = (ImageButton) findViewById(R.id.btn_right);
         btn_left = (ImageButton) findViewById(R.id.btn_left);
 
@@ -102,8 +102,6 @@ public class MainActivity extends AppCompatActivity {
             public void onLeftCardExit(Object dataObject) {
                 array.remove(0);
                 opinion.add(0);
-                //int questionNumberNew = Integer.parseInt(tv_questionNumber.getText().toString()) + 1;
-                //tv_questionNumber.setText(String.valueOf(questionNumberNew));
                 myAppAdapter.notifyDataSetChanged();
                 //Do something on the left!
                 //You also have access to the original object.
@@ -148,7 +146,8 @@ public class MainActivity extends AppCompatActivity {
     public static class ViewHolder {
         public static FrameLayout background;
         public TextView DataText;
-        public ImageView cardImage;
+        public TextView Number;
+        //public ImageView cardImage;
 
 
     }
@@ -156,17 +155,17 @@ public class MainActivity extends AppCompatActivity {
     public class MyAppAdapter extends BaseAdapter {
 
 
-        public List<Data> parkingList;
+        public List<Data> QuestionList;
         public Context context;
 
         private MyAppAdapter(List<Data> apps, Context context) {
-            this.parkingList = apps;
+            this.QuestionList = apps;
             this.context = context;
         }
 
         @Override
         public int getCount() {
-            return parkingList.size();
+            return QuestionList.size();
         }
 
         @Override
@@ -192,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
                 // configure view holder
                 viewHolder = new ViewHolder();
                 viewHolder.DataText = (TextView) rowView.findViewById(R.id.bookText);
+                viewHolder.Number = (TextView) rowView.findViewById(R.id.tv_questionNumber);
                 viewHolder.background = (FrameLayout) rowView.findViewById(R.id.background);
                 //viewHolder.cardImage = (ImageView) rowView.findViewById(R.id.cardImage);
                 rowView.setTag(viewHolder);
@@ -199,9 +199,14 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
-            viewHolder.DataText.setText(parkingList.get(position).getDescription() + "");
-
-            //Glide.with(MainActivity.this).load(parkingList.get(position).getImagePath()).into(viewHolder.cardImage);
+            viewHolder.DataText.setText(QuestionList.get(position).getDescription() + "");
+            // darstellung 01 statt 1:
+            if (QuestionList.get(position).getNumber() < 10) {
+                viewHolder.Number.setText("0" + String.valueOf(QuestionList.get(position).getNumber()));
+            } else {
+                viewHolder.Number.setText(String.valueOf(QuestionList.get(position).getNumber()));
+            }
+            //Glide.with(MainActivity.this).load(QuestionList.get(position).getImagePath()).into(viewHolder.cardImage);
 
             return rowView;
         }
