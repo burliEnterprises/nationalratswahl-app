@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, StartActivity.class));
+                overridePendingTransition(R.animator.top_in, R.animator.bottom_out);
             }
         });
 
@@ -117,7 +118,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
-                // acitvity change to insert here
+                startActivity(new Intent(MainActivity.this, StartActivity.class));
+                overridePendingTransition(R.animator.bottom_in, R.animator.top_out);
             }
 
             @Override

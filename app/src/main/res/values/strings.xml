@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Wahlhelfer Nationalratswahl</string>
+    <integer name="anim_duration">400</integer>
 </resources>
