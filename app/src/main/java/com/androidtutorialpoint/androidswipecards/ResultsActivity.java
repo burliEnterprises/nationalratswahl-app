@@ -34,6 +34,15 @@ public class ResultsActivity extends AppCompatActivity {
             }
         });
 
+        // 1 - drei minus, 2 - zwei minus, 3 - ein minus, 4 - ein plus, 5 - zwei plus, 6 - drei plus
+        // source: https://wahlkabine.at/nationalratswahl-2017/stellungnahmen
+        int spo[]  = {3, 3, 6, 5, 1, 1, 5, 2, 5, 5, 5, 5, 2, 1, 5, 5, 1, 6, 2, 5, 5, 3, 3, 3, 5, 5 };
+        int ovp[]  = {1, 1, 4, 1, 4, 6, 2, 5, 6, 6, 5, 5, 1, 1, 2, 2, 5, 3, 3, 3, 3, 5, 3, 3, 6, 4 };
+        int fpo[]  = {1, 2, 2, 2, 4, 6, 5, 2, 6, 6, 2, 6, 1, 5, 2, 3, 6, 3, 3, 6, 3, 6, 3, 4, 1, 1 };
+        int grun[] = {3, 4, 4, 5, 1, 1, 6, 1, 2, 2, 4, 2, 5, 5, 5, 5, 1, 6, 4, 5, 6, 2, 6, 6, 1, 6 };
+        int neos[] = {3, 2, 1, 3, 4, 6, 2, 5, 3, 3, 6, 3, 4, 6, 3, 4, 1, 3, 3, 3, 5, 3, 4, 4, 1, 6 };
+        int pilz[] = {3, 4, 3, 5, 1, 1, 6, 2, 2, 2, 5, 2, 5, 5, 5, 5, 1, 5, 4, 5, 4, 2, 3, 3, 5, 6 };
+
     }
     @Override
     public void onBackPressed() {
