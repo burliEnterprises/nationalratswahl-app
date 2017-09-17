@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -118,7 +119,12 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
-                startActivity(new Intent(MainActivity.this, ResultsActivity.class));    // works, because i changed it in layout to 0
+                for (int x : opinion) {
+                    Log.d("userinputs", String.valueOf(x));
+                };
+                Intent x = new Intent(MainActivity.this, ResultsActivity.class);
+                x.putExtra("userinputs", opinion);
+                startActivity(x);    // works, because i changed it in layout to 0
                 overridePendingTransition(R.animator.bottom_in, R.animator.top_out);
             }
 

@@ -8,16 +8,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 public class ResultsActivity extends AppCompatActivity {
 
     private Button btn_details;
     private ImageView iv_home;
+    private ArrayList<Integer> userinputs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
         btn_details = (Button) findViewById(R.id.btn_showResults);
         iv_home = (ImageView) findViewById(R.id.iv_home);
+        userinputs = (ArrayList<Integer>) getIntent().getSerializableExtra("userinputs");
+
 
         iv_home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,7 +34,9 @@ public class ResultsActivity extends AppCompatActivity {
         btn_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ResultsActivity.this, ResultsDetailsActivity.class));
+                Intent x = new Intent(ResultsActivity.this, ResultsDetailsActivity.class);
+                x.putExtra("userinputs", userinputs);
+                startActivity(x);
                 overridePendingTransition(R.animator.bottom_in, R.animator.top_out);
             }
         });
