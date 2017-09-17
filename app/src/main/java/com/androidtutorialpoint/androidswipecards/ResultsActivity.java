@@ -22,8 +22,8 @@ public class ResultsActivity extends AppCompatActivity {
         iv_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ResultsActivity.this, ResultsActivity.class));    // works, because i changed it in layout to 0
-                overridePendingTransition(R.animator.bottom_in, R.animator.top_out);
+                startActivity(new Intent(ResultsActivity.this, StartActivity.class));    // works, because i changed it in layout to 0
+                overridePendingTransition(R.animator.top_in, R.animator.bottom_out);
             }
         });
         btn_details.setOnClickListener(new View.OnClickListener() {

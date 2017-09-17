@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         array.add(new Data(10, "Soll das allgemeine Wahlrecht auf Bundesebene auf österreichische StaatsbürgerInnen beschränkt bleiben?"));
         array.add(new Data(11, "Soll sich Österreich dafür einsetzen, dass der EU-Kommissionspräsident direkt gewählt wird?"));
         array.add(new Data(12, "Soll sich Österreich dafür einsetzen, die EU-Sanktionen gegenüber Russland aufzuheben?"));
-        array.add(new Data(13, "SSoll es anerkannten Flüchtlingen uneingeschränkt erlaubt sein, ihre unmittelbaren Familienangehörigen nachzuholen?"));
+        array.add(new Data(13, "Soll es anerkannten Flüchtlingen uneingeschränkt erlaubt sein, ihre unmittelbaren Familienangehörigen nachzuholen?"));
         array.add(new Data(14, "Soll Österreich sich dafür einsetzen, dass die EU finanzielle Mittel für die Seenotrettung im Mittelmeer erhöht?"));
         array.add(new Data(15, "Sollen Schwangerschaftsabbrüche von der Krankenkasse teilweise übernommen werden?"));
         array.add(new Data(16, "Soll es eine dritte Option bei der Eintragung des Geschlechts in behördlichen Dokumenten geben?"));
