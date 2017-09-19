@@ -82,7 +82,7 @@
                 app:srcCompat="@drawable/astronaut" />
 
             <Button
-                android:id="@+id/btn_showResults"
+                android:id="@+id/btn_share"
                 android:layout_width="169dp"
                 android:layout_height="40dp"
                 android:layout_marginBottom="8dp"
@@ -100,7 +100,7 @@
                 android:id="@+id/relativeLayout4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/btn_showResults"
+                android:layout_above="@+id/btn_share"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/imageView3"
                 android:gravity="center">

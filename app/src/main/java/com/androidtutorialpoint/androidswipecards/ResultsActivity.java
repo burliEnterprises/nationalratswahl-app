@@ -1,7 +1,6 @@
 package com.androidtutorialpoint.androidswipecards;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +18,7 @@ public class ResultsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
-        btn_details = (Button) findViewById(R.id.btn_showResults);
+        btn_details = (Button) findViewById(R.id.btn_share);
         iv_home = (ImageView) findViewById(R.id.iv_home);
         userinputs = (ArrayList<Integer>) getIntent().getSerializableExtra("userinputs");
 
