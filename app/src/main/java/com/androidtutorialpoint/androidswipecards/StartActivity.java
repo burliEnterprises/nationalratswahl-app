@@ -12,7 +12,7 @@ import org.w3c.dom.Text;
 
 public class StartActivity extends AppCompatActivity {
 
-    private Button btn_go;
+    private Button btn_go, button;
     private TextView tv_mehrErfahren;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,15 @@ public class StartActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(StartActivity.this, MainActivity.class));
                 overridePendingTransition(R.animator.bottom_in, R.animator.top_out);
+            }
+        });
+
+        // To-delete:
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            startActivity(new Intent(StartActivity.this, ResultsDetailsActivity.class));
             }
         });
 

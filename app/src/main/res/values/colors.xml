@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="spo">#FF7878</color>
+    <color name="ovp">#72CCCA</color>
+    <color name="fpo">#91CED7</color>
+    <color name="grun">#CCEBC0</color>
+    <color name="neos">#FF789E</color>
+    <color name="pilz">#ecf0f1</color>
 </resources>

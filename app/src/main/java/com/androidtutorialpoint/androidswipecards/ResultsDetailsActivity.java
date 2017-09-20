@@ -2,17 +2,21 @@ package com.androidtutorialpoint.androidswipecards;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,27 +62,38 @@ public class ResultsDetailsActivity extends AppCompatActivity {
         entries.add(new PieEntry(5, "Liste Pilz"));
 
         ArrayList<Integer> colors = new ArrayList<>();
-        colors.add(Color.parseColor("#FE6860"));
-        colors.add(Color.parseColor("#72CCCA"));
-        colors.add(Color.parseColor("#91CED7"));
-        colors.add(Color.parseColor("#CCEBC0"));
-        colors.add(Color.parseColor("#FDE1F7"));
-        colors.add(Color.parseColor("#ecf0f1"));
+        colors.add(ResourcesCompat.getColor(getResources(), R.color.spo, null));
+        colors.add(ResourcesCompat.getColor(getResources(), R.color.ovp, null));
+        colors.add(ResourcesCompat.getColor(getResources(), R.color.fpo, null));
+        colors.add(ResourcesCompat.getColor(getResources(), R.color.grun, null));
+        colors.add(ResourcesCompat.getColor(getResources(), R.color.neos, null));
+        colors.add(ResourcesCompat.getColor(getResources(), R.color.pilz, null));
 
         PieDataSet set = new PieDataSet(entries, "");
         set.setColors(colors);
         set.setSliceSpace(0f);
         set.setDrawValues(true);
+        set.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+
         PieData data = new PieData(set);
-        // data.setValueTextSize(20f); // <- here
+        data.setValueFormatter(new PercentFormatter());
+        data.setValueTextSize(12f);
+        //data.setValueTextColor(Color.parseColor("#666666"));
         // data.setValueTextColor(Color.parseColor("#ecf0f1"));
 
         pieChart.setData(data);
         pieChart.setUsePercentValues(true);
         pieChart.setHoleRadius(0);
+        pieChart.setTransparentCircleRadius(30f);
+        pieChart.setDescription(new Description());
         pieChart.setDrawEntryLabels(false);
-        pieChart.invalidate(); // refresh
+        pieChart.highlightValues(null);
+        pieChart.invalidate();
+        pieChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
+        pieChart.getDescription().setEnabled(false);
 
+        Legend l = pieChart.getLegend();
+        l.setEnabled(false);
     }
 
     @Override
