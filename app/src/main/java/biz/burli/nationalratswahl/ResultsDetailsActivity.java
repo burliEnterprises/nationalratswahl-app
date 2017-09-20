@@ -1,7 +1,6 @@
-package com.androidtutorialpoint.androidswipecards;
+package biz.burli.nationalratswahl;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -75,6 +74,7 @@ public class ResultsDetailsActivity extends AppCompatActivity {
         set.setDrawValues(true);
         set.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
 
+
         PieData data = new PieData(set);
         data.setValueFormatter(new PercentFormatter());
         data.setValueTextSize(12f);
@@ -92,8 +92,10 @@ public class ResultsDetailsActivity extends AppCompatActivity {
         pieChart.animateY(1400, Easing.EasingOption.EaseInOutQuad);
         pieChart.getDescription().setEnabled(false);
 
+
         Legend l = pieChart.getLegend();
         l.setEnabled(false);
+        //http://androidbuddys.com/pie-chartdonut-chart-using-mp-chart/
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.androidtutorialpoint.androidswipecards;
+package biz.burli.nationalratswahl;
 
 /**
  * Created by navneet on 20/11/16.

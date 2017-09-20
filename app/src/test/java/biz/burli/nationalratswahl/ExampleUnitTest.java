@@ -1,4 +1,4 @@
-package com.androidtutorialpoint.androidswipecards;
+package biz.burli.nationalratswahl;
 
 import org.junit.Test;
 

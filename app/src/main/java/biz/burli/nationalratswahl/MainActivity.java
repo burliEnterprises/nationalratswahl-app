@@ -1,4 +1,4 @@
-package com.androidtutorialpoint.androidswipecards;
+package biz.burli.nationalratswahl;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,10 +14,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
