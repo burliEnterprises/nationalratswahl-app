@@ -46,5 +46,10 @@ public class StartActivity extends AppCompatActivity {
 
 
 
+
+    }
+    @Override
+    public void onBackPressed() {       // not working correctly!
+        finish();   // exit app
     }
 }

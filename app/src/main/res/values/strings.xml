@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Wahlhelfer Nationalratswahl</string>
     <integer name="anim_duration">400</integer>
+    <string name="p1">SPÖ</string>
+    <string name="p2">ÖVP</string>
+    <string name="p3">FPÖ</string>
+    <string name="p4">GRÜNE</string>
+    <string name="p5">NEOS</string>
+    <string name="p6">PILZ</string>
 </resources>
