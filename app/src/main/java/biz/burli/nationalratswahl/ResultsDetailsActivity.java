@@ -85,7 +85,8 @@ public class ResultsDetailsActivity extends AppCompatActivity {
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "Die Wahlhelfer-App hat mir meine ideale Partei berechnet. \n\n " +
                         "Zu " + String.valueOf(scores[highest_party_nr-1]) +" % bin ich der perfekte " + party_favorite + "-Wähler");
                 sendIntent.setType("text/plain");
-                startActivity(sendIntent);
+                if (sendIntent.resolveActivity(getPackageManager()) != null)
+                    startActivity(Intent.createChooser(sendIntent, "Share"));
             }
         });
 
