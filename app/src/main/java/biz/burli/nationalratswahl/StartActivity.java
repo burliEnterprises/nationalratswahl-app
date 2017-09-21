@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class StartActivity extends AppCompatActivity {
 
-    private Button btn_go, button;
+    private Button btn_go;
     private TextView tv_mehrErfahren;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +26,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-        // To-delete:
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            startActivity(new Intent(StartActivity.this, ResultsDetailsActivity.class));
-            }
-        });
+
 
         tv_mehrErfahren.setOnClickListener(new View.OnClickListener() {
             @Override

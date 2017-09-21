@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Wahlhelfer Nationalratswahl</string>
+    <string name="app_name">Wahlhelfer</string>
     <integer name="anim_duration">400</integer>
     <string name="p1">SPÖ</string>
     <string name="p2">ÖVP</string>
