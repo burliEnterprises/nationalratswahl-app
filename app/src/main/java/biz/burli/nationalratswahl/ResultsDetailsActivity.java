@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -16,6 +17,8 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +32,7 @@ public class ResultsDetailsActivity extends AppCompatActivity {
     private int[] scores;
     private int highest_party_nr;
     private String party_favorite;
+    private TextView text_head;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,8 @@ public class ResultsDetailsActivity extends AppCompatActivity {
         btn_share = (Button) findViewById(R.id.btn_share);
         iv_home = (ImageView) findViewById(R.id.iv_home);
         pieChart = (PieChart) findViewById(R.id.piechart);
+        text_head = (TextView) findViewById(R.id.text_head);
+
         scores = (int[]) getIntent().getExtras().getIntArray("scores");
         highest_party_nr = (int) getIntent().getExtras().getInt("highest");
         switch(highest_party_nr) {
@@ -60,6 +66,7 @@ public class ResultsDetailsActivity extends AppCompatActivity {
                 party_favorite = getResources().getString(R.string.p6);
                 break;
         };
+        text_head.setText("Deine Partei ist: " + party_favorite + "!");
 
         iv_home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +82,8 @@ public class ResultsDetailsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Ich bin der perfekte " + party_favorite + "-Wähler");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Die Wahlhelfer-App hat mir meine ideale Partei berechnet. \n\n " +
+                        "Zu " + String.valueOf(scores[highest_party_nr]) +" % bin ich der perfekte " + party_favorite + "-Wähler");
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
             }
@@ -101,9 +109,9 @@ public class ResultsDetailsActivity extends AppCompatActivity {
 
         PieDataSet set = new PieDataSet(entries, "");
         set.setColors(colors);
-        set.setSliceSpace(0f);
+        set.setSliceSpace(2f);
         set.setDrawValues(true);
-        set.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
+        //set.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
 
 
         PieData data = new PieData(set);

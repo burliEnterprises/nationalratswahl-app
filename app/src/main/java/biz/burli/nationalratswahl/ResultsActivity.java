@@ -122,9 +122,11 @@ public class ResultsActivity extends AppCompatActivity {
         for (int i = 0; i < scores.length; i++) {
             total += scores[i];
         };
+        int highest_value = 0;
         for (int i = 0; i < scores.length; i++) {
             scores[i] = 100 * scores[i] / total;
-            if (highest < scores[i]) {
+            if (highest_value < scores[i]) {
+                highest_value = scores[i];
                 highest = i + 1;
             }
         };
