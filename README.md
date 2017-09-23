@@ -9,9 +9,7 @@ https://play.google.com/store/apps/details?id=biz.burli.nationalratswahl
 - Tinder style swiping for yes/no answers
 
 ## Screenshots
-<img src="https://raw.githubusercontent.com/burliEnterprises/nationalratswahl-app/master/graphics/screen/1.png" />
-<img src="https://raw.githubusercontent.com/burliEnterprises/nationalratswahl-app/master/graphics/screen/2.png" />
-<img src="https://raw.githubusercontent.com/burliEnterprises/nationalratswahl-app/master/graphics/screen/3.png" />
+<img src="https://raw.githubusercontent.com/burliEnterprises/nationalratswahl-app/master/graphics/screen/combin.png" />
 
 ## Installation
 Use Gradle to clone the files in Android Studio.
