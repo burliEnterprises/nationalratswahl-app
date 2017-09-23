@@ -4,26 +4,15 @@
 Final app can be downloaded here:<br/>
 https://play.google.com/store/apps/details?id=biz.burli.nationalratswahl
 <br/><br/>
-A tool that allows users to find their party  (https://www.tensorflow.org/) and the pre-trained Deep Learning Convolutional Neural Network model called Inception (https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html).
 
-This model has been pre-trained for the  ImageNet (http://image-net.org/) data, it can differentiate between 1,000 different classes
-The program applies Transfer Learning to this existing model and re-trains it to classify a new set of images.
+### app calculates the party the user should vote for at the election
+### Tinder style swiping for yes/no answers
 
-This is a generic setup and can be used to classify almost any kind of image.
 
 ## Installation
 Use Gradle to clone the files in Android Studio.
 
-## Usage
 
-The usage is described in this article at the bottom half, simply follow the steps:<br/>
-https://medium.com/@m_ko/deep-learning-with-tensorflow-part-2-image-classification-58fcdffa7b84
-<br/>
-
-If you wanted to use a video as input and look at it frame-by-frame, check out this repository:
-https://github.com/koflerm/tensorflow-video-classifier
-
-</br>
 ## License
 MIT License
 
