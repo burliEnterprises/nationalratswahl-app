@@ -5,9 +5,13 @@ Final app can be downloaded here:<br/>
 https://play.google.com/store/apps/details?id=biz.burli.nationalratswahl
 <br/><br/>
 
-### app calculates the party the user should vote for at the election
-### Tinder style swiping for yes/no answers
+- app calculates the party the user should vote for at the election
+- Tinder style swiping for yes/no answers
 
+## Screenshots
+<img src="https://raw.githubusercontent.com/burliEnterprises/nationalratswahl-app/master/graphics/screen/1.png" />
+<img src="https://raw.githubusercontent.com/burliEnterprises/nationalratswahl-app/master/graphics/screen/2.png" />
+<img src="https://raw.githubusercontent.com/burliEnterprises/nationalratswahl-app/master/graphics/screen/3.png" />
 
 ## Installation
 Use Gradle to clone the files in Android Studio.
